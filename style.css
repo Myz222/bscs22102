@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    background-color: #f0f0f0;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    height: 15vh;
+    border-radius: 15px;
+    padding: 0 2vw;
+    border: 2px solid black;
+    backdrop-filter: blur(10px);
+    margin: 0 auto; 
+}
+.logo {
+    font-size: 2rem;
+}
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.nav-links {
+    display: flex;
+    gap: 5vw;
+    list-style-type: none;
+    padding-top: 2vh;
+}
+li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.5s ease, transform 1s ease;
+}
+li a.info:hover {
+    color: #00ffcc;
+}
+li a.icon {
+    width: 7vh;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    color: #333;
+    transition: transform 1.5s ease, background-color 1s ease, color 1s ease;
+    transform: scale(1);
+}
+
+li a.icon:hover {
+    transform: scale(1.2);
+}
+
+.instagram:hover {
+    background-color: #a85ca8;
+}
+
+.linkedin:hover {
+    background-color: #395461;
+}
+
+.youtube:hover {
+    background-color: #ff0000;
+}
+
+.github:hover {
+    background-color: #333;
+    color: white;
+}
+
+.nav-links a.active {
+    color: #ffcc00;
+    font-weight: bold;
+}
+.home-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    margin-top: 1rem; 
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #0072ff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0072ff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0072ff;
+    color: #fff;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+/* About */
+.about-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.about h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-content img {
+    width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    line-height: 1.6;
+}
+.animated-heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text-change::before {
+    content: "Welcome to My Portfolio";
+    animation: changeText 6s infinite;
+}
+
+@keyframes changeText {
+    0% { content: "Welcome to My Portfolio"; } /* English */
+    33% { content: "مرحبا بكم في محفظتي"; } /* Arabic */
+    66% { content: "Bienvenue dans mon portfolio"; } /* French */
+    100% { content: "Welcome to My Portfolio"; }
+}
+.projects-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+}
+
+.project {
+    margin-bottom: 2rem;
+}
+
+.project video, .project img {
+    width:30vw;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.project-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.projects-main footer {
+    display: none;
+}
+@media (max-width: 768px) {
+    nav.navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    ul.nav-links {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    li a {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .project video, .project img {
+        max-width: 80vw;
+        width: 40vw;
+    }
+}
+
+@media (max-width: 480px) {
+    nav.navbar {
+        width: 95vw;
+    }
+
+    li a {
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .project video, .project img {
+        width: 70vw;
+    }
+}
